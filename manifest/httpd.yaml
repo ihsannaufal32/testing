@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: httpd-test
-  namespace: default
+  namespace: djkn-lelang-staging
 spec:
   replicas: 1
   selector:
@@ -23,7 +23,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: httpd-service
-  namespace: default
+  namespace: djkn-lelang-staging
 spec:
   selector:
     app: httpd

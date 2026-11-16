@@ -17,7 +17,7 @@ spec:
       - name: httpd
         image: docker.io/library/httpd:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           limits:
             cpu: 50m
@@ -36,6 +36,6 @@ spec:
     app: httpd
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 80
+    port: 80
+    targetPort: 8080
   type: ClusterIP

@@ -14,13 +14,10 @@ spec:
         app: httpd
     spec:
       containers:
-      - name: httpd-sample
-        image: 'image-registry.openshift-image-registry.svc:5000/djkn-lelang-staging/httpd-sample:latest'
+      - name: httpd
+        image: registry.redhat.io/rhel9/httpd-24:latest
         ports:
-          - containerPort: 8080
-            protocol: TCP
-          - containerPort: 8443
-            protocol: TCP
+        - containerPort: 80
         resources:
           limits:
             cpu: 50m
@@ -28,9 +25,6 @@ spec:
           request:
             cpu: 40m
             memory: 128Mi
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        imagePullPolicy: Always     
 ---
 apiVersion: v1
 kind: Service

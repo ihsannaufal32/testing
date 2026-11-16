@@ -18,6 +18,13 @@ spec:
         image: docker.io/library/httpd:latest
         ports:
         - containerPort: 80
+        resources:
+      limits:
+        cpu: 50m
+        memory: 256Mi
+      request:
+        cpu: 40m
+        memory: 128Mi
 ---
 apiVersion: v1
 kind: Service

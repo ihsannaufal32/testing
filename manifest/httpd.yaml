@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: docker.io/library/httpd:latest
+        image: registry.redhat.io/rhel9/httpd-24:latest
         ports:
         - containerPort: 80
         resources:
